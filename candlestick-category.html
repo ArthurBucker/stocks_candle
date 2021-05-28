@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CandleStick Chart with Category X-axis</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.8.17/dayjs.min.js"></script>
+  </head>
+
+  <body>
+     <form action="">
+      <input class="pesquisar-txt" type="text" placeholder="Pesquisar ação">
+      <button class="pesquisar">Pesquisar</button>
+    </form>
+    <select name="time-frame" id="time-frame">
+      <option value="dia">dia</option>
+      <option value="60min">60min</option>
+      <option value="semana">semana</option>
+      <option value="mes">mês</option>
+    </select>
+     <div id="chart">
+     </div>
+
+    <script src="alphavantage.js"></script>
+    <script src="candle.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
