@@ -1,28 +1,20 @@
+
+
 class Stocks {
   constructor() {
     this.time = 'TIME_SERIES_DAILY';
     this.apiKey = '30HFNYXW9PH2RC1M';
   }
-
+  
   //Dia
   async getDia(simbolo) {
     const respostaDia = await fetch(`https://www.alphavantage.co/query?function=${this.time}&symbol=${simbolo}&apikey=${this.apiKey}`);
 
     const dia = await respostaDia.json();
+    
 
     return {
       dia
-    }
-  }
-
-  //60 Minutos
-  async get60min(simbolo, tempo) {
-    const resposta60 = await fetch(`https://www.alphavantage.co/query?function=${tempo}&symbol=${simbolo}&interval=60min&apikey=${this.apiKey}`);
-
-    const min60 = await resposta60.json();
-
-    return {
-      min60
     }
   }
 
@@ -45,6 +37,18 @@ class Stocks {
 
     return {
       mes
+    }
+  }
+
+  //Buscar
+  async getCod(simbolo) {
+    const respostaCod = await fetch(`https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${simbolo}&apikey=${this.apiKey}`);
+
+    const cod = await respostaCod.json();
+    
+
+    return {
+      cod
     }
   }
 }
